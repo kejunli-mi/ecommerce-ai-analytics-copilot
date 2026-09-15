@@ -1,0 +1,21 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+*.duckdb
+*.duckdb.wal
+
+# Raw and generated data stay local. Keep only folder placeholders in Git.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+reports/generated/*
+!reports/generated/.gitkeep
+
+# Personal job-search notes stay local and are not part of the public project.
+docs/resume_bullets.md

@@ -1,0 +1,52 @@
+{
+  "name": "olist_ecommerce_semantic_layer",
+  "analysis_period": {
+    "start": "2017-01-01",
+    "end_exclusive": "2018-09-01",
+    "comparable_months": "January through August"
+  },
+  "metrics": {
+    "gmv": {
+      "label": "GMV",
+      "definition": "Sum of item price for effective orders, excluding freight",
+      "sql": "SUM(gmv)",
+      "source": "analytics.orders"
+    },
+    "effective_orders": {
+      "label": "有效订单量",
+      "definition": "Purchased orders excluding canceled and unavailable orders",
+      "sql": "COUNT(*)",
+      "source": "analytics.orders"
+    },
+    "average_order_value": {
+      "label": "客单价",
+      "definition": "GMV divided by effective orders",
+      "sql": "SUM(gmv) / COUNT(*)",
+      "source": "analytics.orders"
+    },
+    "late_delivery_rate": {
+      "label": "延迟配送率",
+      "definition": "Delivered orders arriving after the estimated date divided by comparable delivered orders",
+      "source": "analytics.orders"
+    },
+    "repeat_rate": {
+      "label": "复购率",
+      "definition": "Users with at least two effective orders divided by users with at least one",
+      "source": "analytics.orders",
+      "entity_key": "customer_unique_id"
+    }
+  },
+  "dimensions": {
+    "month": "date_trunc('month', order_purchase_timestamp)",
+    "customer_state": "analytics.orders.customer_state",
+    "product_category": "analytics.order_items.product_category",
+    "seller": "analytics.order_items.seller_id"
+  },
+  "guardrails": [
+    "Only SELECT and WITH queries are generated",
+    "User text is never interpolated into SQL",
+    "Years are restricted to 2017 and 2018 comparable January-August periods",
+    "Ranking size is clamped to 1-20",
+    "Unsupported or mutating requests are blocked"
+  ]
+}

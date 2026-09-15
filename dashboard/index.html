@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>电商经营数据分析 Copilot</title>
+  <style>
+    :root { --blue:#2563eb; --teal:#0f766e; --ink:#172033; --muted:#667085; --line:#e4e7ec; --bg:#f7f8fb; --card:#fff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif; color:var(--ink); background:var(--bg); }
+    header { padding:34px 5vw 22px; background:#fff; border-bottom:1px solid var(--line); }
+    h1 { margin:0 0 8px; font-size:30px; }
+    header p { margin:0; color:var(--muted); }
+    .toolbar { display:flex; gap:12px; align-items:center; margin-top:20px; }
+    select { padding:9px 30px 9px 12px; border:1px solid #cfd4dc; border-radius:8px; background:white; font-size:15px; }
+    nav { display:flex; gap:6px; padding:18px 5vw 0; overflow:auto; }
+    nav button { border:0; background:transparent; padding:10px 14px; color:var(--muted); font-size:15px; cursor:pointer; border-bottom:3px solid transparent; white-space:nowrap; }
+    nav button.active { color:var(--blue); border-color:var(--blue); font-weight:600; }
+    main { padding:22px 5vw 50px; max-width:1480px; margin:auto; }
+    .tab { display:none; }
+    .tab.active { display:block; }
+    .kpis { display:grid; grid-template-columns:repeat(4,minmax(150px,1fr)); gap:14px; margin-bottom:20px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; box-shadow:0 1px 2px rgba(16,24,40,.04); }
+    .kpi small { color:var(--muted); }
+    .kpi strong { display:block; margin-top:8px; font-size:26px; }
+    .grid { display:grid; grid-template-columns:1.2fr 1fr; gap:18px; }
+    h2 { font-size:20px; margin:0 0 16px; }
+    h3 { font-size:16px; margin:0 0 12px; }
+    canvas { width:100%; height:360px; display:block; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th,td { padding:10px 9px; border-bottom:1px solid var(--line); text-align:right; }
+    th:first-child,td:first-child { text-align:left; }
+    th { color:var(--muted); font-weight:600; }
+    .note { color:var(--muted); font-size:13px; margin-top:12px; }
+    pre { overflow:auto; padding:14px; background:#111827; color:#e5e7eb; border-radius:9px; font-size:12px; line-height:1.55; }
+    .eval { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .pill { display:inline-block; padding:5px 9px; color:#075e54; background:#dff5f1; border-radius:999px; font-size:12px; }
+    @media (max-width:900px) { .kpis,.eval { grid-template-columns:repeat(2,1fr); } .grid { grid-template-columns:1fr; } }
+    @media (max-width:560px) { .kpis,.eval { grid-template-columns:1fr; } header,main { padding-left:18px; padding-right:18px; } nav { padding-left:18px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>电商经营数据分析 Copilot</h1>
+    <p>Olist 公开数据：经营增长、品类结构、履约体验、用户留存与可控自然语言取数</p>
+    <div class="toolbar"><label for="year">同期年份（1至8月）</label><select id="year"><option>2018</option><option>2017</option></select></div>
+  </header>
+  <nav>
+    <button class="active" data-tab="overview">经营大盘</button>
+    <button data-tab="category">品类</button>
+    <button data-tab="region">地区与履约</button>
+    <button data-tab="customer">用户</button>
+    <button data-tab="copilot">Copilot 评测</button>
+  </nav>
+  <main>
+    <section id="overview" class="tab active">
+      <div id="kpis" class="kpis"></div>
+      <div class="card"><h2>月度 GMV</h2><canvas id="monthlyChart"></canvas><div class="note">GMV 为有效订单商品金额，不含运费。</div></div>
+    </section>
+    <section id="category" class="tab"><div class="grid"><div class="card"><h2>品类 GMV Top 10</h2><canvas id="categoryChart"></canvas></div><div class="card"><h2>品类明细</h2><div id="categoryTable"></div><div class="note">一笔订单可包含多个品类，品类订单不可直接加总。</div></div></div></section>
+    <section id="region" class="tab"><div class="grid"><div class="card"><h2>地区 GMV Top 12</h2><canvas id="stateChart"></canvas></div><div class="card"><h2>地区履约与评分</h2><div id="stateTable"></div></div></div></section>
+    <section id="customer" class="tab"><div class="card"><h2>用户分层结构</h2><div id="segmentTable"></div><div class="note">用户分层截止日为 2018-09-01，使用 customer_unique_id 识别跨订单用户。</div></div></section>
+    <section id="copilot" class="tab"><div class="grid"><div class="card"><span class="pill">可控语义层</span><h2 style="margin-top:12px">示例问题</h2><p id="question"></p><div id="answer"></div><h3>SQL</h3><pre id="sql"></pre></div><div class="card"><h2>50 题离线评测</h2><div id="evaluation" class="eval"></div><div class="note">评测为本地回归集，不代表通用大模型的真实世界泛化能力。</div></div></div></section>
+  </main>
+  <script>
+    let DATA;
+    const fmt = n => new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2}).format(n);
+    const pct = n => `${(n*100).toFixed(1)}%`;
+    function table(headers, rows) { return `<table><thead><tr>${headers.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table>`; }
+    function setupCanvas(canvas) { const dpr=window.devicePixelRatio||1,w=canvas.clientWidth,h=canvas.clientHeight; canvas.width=w*dpr;canvas.height=h*dpr;const c=canvas.getContext('2d');c.scale(dpr,dpr);return {c,w,h}; }
+    function bars(canvas, labels, values, color) { const {c,w,h}=setupCanvas(canvas),left=150,right=28,top=16,bottom=28,max=Math.max(...values)*1.08,row=(h-top-bottom)/values.length,plotWidth=w-left-right;c.clearRect(0,0,w,h);c.font='12px -apple-system';values.forEach((v,i)=>{const y=top+i*row+row*.16,bw=plotWidth*v/max;c.fillStyle=color;c.fillRect(left,y,bw,row*.6);c.fillStyle='#344054';c.textAlign='right';c.fillText(labels[i].slice(0,22),left-8,y+row*.4);const inside=bw>plotWidth*.72;c.fillStyle=inside?'#fff':'#344054';c.textAlign=inside?'right':'left';c.fillText(fmt(v),inside?left+bw-6:left+bw+6,y+row*.4);}); }
+    function line(canvas, labels, values) { const {c,w,h}=setupCanvas(canvas),pad={l:65,r:28,t:18,b:45},min=0,max=Math.max(...values)*1.12;c.clearRect(0,0,w,h);c.strokeStyle='#d0d5dd';c.lineWidth=1;for(let i=0;i<5;i++){const y=pad.t+(h-pad.t-pad.b)*i/4;c.beginPath();c.moveTo(pad.l,y);c.lineTo(w-pad.r,y);c.stroke();}c.strokeStyle='#2563eb';c.lineWidth=3;c.beginPath();values.forEach((v,i)=>{const x=pad.l+(w-pad.l-pad.r)*i/(values.length-1),y=pad.t+(h-pad.t-pad.b)*(1-v/max);i?c.lineTo(x,y):c.moveTo(x,y);});c.stroke();c.fillStyle='#475467';c.font='12px -apple-system';c.textAlign='center';labels.forEach((x,i)=>c.fillText(x.slice(5),pad.l+(w-pad.l-pad.r)*i/(labels.length-1),h-16)); }
+    function render(){const year=document.getElementById('year').value,d=DATA.years[year],m=d.metrics;document.getElementById('kpis').innerHTML=[['GMV',fmt(m.gmv)],['有效订单',fmt(m.orders)],['客单价',fmt(m.aov)],['购买用户',fmt(m.users)]].map(x=>`<div class="card kpi"><small>${x[0]}</small><strong>${x[1]}</strong></div>`).join('');line(document.getElementById('monthlyChart'),d.monthly.map(x=>x.month),d.monthly.map(x=>x.gmv));bars(document.getElementById('categoryChart'),d.categories.map(x=>x.category),d.categories.map(x=>x.gmv),'#0f766e');bars(document.getElementById('stateChart'),d.states.map(x=>x.state),d.states.map(x=>x.gmv),'#2563eb');document.getElementById('categoryTable').innerHTML=table(['品类','GMV','件数'],d.categories.map(x=>[x.category,fmt(x.gmv),fmt(x.units)]));document.getElementById('stateTable').innerHTML=table(['州','订单','延迟率','评分'],d.states.map(x=>[x.state,fmt(x.orders),pct(x.late_rate),x.review.toFixed(2)]));}
+    fetch('data.json').then(r=>r.json()).then(data=>{DATA=data;document.getElementById('segmentTable').innerHTML=table(['分层','用户','用户占比','GMV占比','人均GMV'],data.segments.map(x=>[x.customer_segment,fmt(x.users),pct(x.user_share),pct(x.gmv_share),fmt(x.avg_customer_gmv)]));const ex=data.copilot_example;document.getElementById('question').textContent=ex.question;document.getElementById('answer').innerHTML=table(ex.columns,ex.rows.map(r=>r.map(x=>typeof x==='number'?fmt(x):x)));document.getElementById('sql').textContent=ex.sql;const e=data.evaluation?.semantic;if(e)document.getElementById('evaluation').innerHTML=[['答案准确率',pct(e.answer_accuracy)],['安全拦截率',pct(e.safety_accuracy)],['中位延迟',`${e.median_latency_ms.toFixed(1)} ms`]].map(x=>`<div class="kpi"><small>${x[0]}</small><strong>${x[1]}</strong></div>`).join('');render();});
+    document.getElementById('year').addEventListener('change',render);window.addEventListener('resize',()=>DATA&&render());document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('nav button,.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active');if(DATA)render();}));
+  </script>
+</body>
+</html>

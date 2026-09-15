@@ -1,0 +1,50 @@
+{"id":"q001","question":"2018年1至8月GMV总额是多少？","expected_intent":"total_gmv","expected_params":{"year":2018}}
+{"id":"q002","question":"2017年同期成交额是多少？","expected_intent":"total_gmv","expected_params":{"year":2017}}
+{"id":"q003","question":"请给出2018年商品交易额","expected_intent":"total_gmv","expected_params":{"year":2018}}
+{"id":"q004","question":"2017年1到8月销售额合计","expected_intent":"total_gmv","expected_params":{"year":2017}}
+{"id":"q005","question":"2018年的GMV是多少","expected_intent":"total_gmv","expected_params":{"year":2018}}
+{"id":"q006","question":"2018年有效订单量是多少？","expected_intent":"order_count","expected_params":{"year":2018}}
+{"id":"q007","question":"2017年一共有多少笔订单？","expected_intent":"order_count","expected_params":{"year":2017}}
+{"id":"q008","question":"请统计2018年订单数","expected_intent":"order_count","expected_params":{"year":2018}}
+{"id":"q009","question":"2017年1至8月有多少笔订单","expected_intent":"order_count","expected_params":{"year":2017}}
+{"id":"q010","question":"2018年的有效订单数是多少","expected_intent":"order_count","expected_params":{"year":2018}}
+{"id":"q011","question":"2018年客单价是多少？","expected_intent":"average_order_value","expected_params":{"year":2018}}
+{"id":"q012","question":"2017年平均每单成交金额","expected_intent":"average_order_value","expected_params":{"year":2017}}
+{"id":"q013","question":"2018年每笔订单平均花了多少","expected_intent":"average_order_value","expected_params":{"year":2018}}
+{"id":"q014","question":"帮我查2017年客单价","expected_intent":"average_order_value","expected_params":{"year":2017}}
+{"id":"q015","question":"2018年平均每单GMV","expected_intent":"average_order_value","expected_params":{"year":2018}}
+{"id":"q016","question":"2018年GMV最高的前5个品类","expected_intent":"top_categories","expected_params":{"year":2018,"top_n":5}}
+{"id":"q017","question":"2017年商品类别Top 3","expected_intent":"top_categories","expected_params":{"year":2017,"top_n":3}}
+{"id":"q018","question":"哪些品类在2018年卖得最好？看前10","expected_intent":"top_categories","expected_params":{"year":2018,"top_n":10}}
+{"id":"q019","question":"给我2017年category排名前5","expected_intent":"top_categories","expected_params":{"year":2017,"top_n":5}}
+{"id":"q020","question":"2018年领先的前8个品类","expected_intent":"top_categories","expected_params":{"year":2018,"top_n":8}}
+{"id":"q021","question":"2018年GMV最高的前5个州","expected_intent":"top_states","expected_params":{"year":2018,"top_n":5}}
+{"id":"q022","question":"2017年地区销售排名前3","expected_intent":"top_states","expected_params":{"year":2017,"top_n":3}}
+{"id":"q023","question":"2018年哪些州的成交额最多？看前10","expected_intent":"top_states","expected_params":{"year":2018,"top_n":10}}
+{"id":"q024","question":"给我2017年state Top 5","expected_intent":"top_states","expected_params":{"year":2017,"top_n":5}}
+{"id":"q025","question":"2018年领先的前8个地区","expected_intent":"top_states","expected_params":{"year":2018,"top_n":8}}
+{"id":"q026","question":"2018年延迟配送率是多少？","expected_intent":"late_delivery_rate","expected_params":{"year":2018}}
+{"id":"q027","question":"2017年订单送达逾期比例","expected_intent":"late_delivery_rate","expected_params":{"year":2017}}
+{"id":"q028","question":"2018年有多少订单晚到","expected_intent":"late_delivery_rate","expected_params":{"year":2018}}
+{"id":"q029","question":"查一下2017年配送延迟情况","expected_intent":"late_delivery_rate","expected_params":{"year":2017}}
+{"id":"q030","question":"2018年平均评价分是多少？","expected_intent":"average_review_score","expected_params":{"year":2018}}
+{"id":"q031","question":"2017年订单评分如何","expected_intent":"average_review_score","expected_params":{"year":2017}}
+{"id":"q032","question":"2018年用户平均打了几星","expected_intent":"average_review_score","expected_params":{"year":2018}}
+{"id":"q033","question":"看看2017年的用户口碑","expected_intent":"average_review_score","expected_params":{"year":2017}}
+{"id":"q034","question":"2018年复购率是多少？","expected_intent":"repeat_rate","expected_params":{"year":2018}}
+{"id":"q035","question":"2017年有多少用户再次购买","expected_intent":"repeat_rate","expected_params":{"year":2017}}
+{"id":"q036","question":"2018年购买两次及以上的用户占比","expected_intent":"repeat_rate","expected_params":{"year":2018}}
+{"id":"q037","question":"请给出2017年回购用户比例","expected_intent":"repeat_rate","expected_params":{"year":2017}}
+{"id":"q038","question":"2018年GMV最高的前5个商家","expected_intent":"top_sellers","expected_params":{"year":2018,"top_n":5}}
+{"id":"q039","question":"2017年卖家排名前3","expected_intent":"top_sellers","expected_params":{"year":2017,"top_n":3}}
+{"id":"q040","question":"给我2018年seller Top 10","expected_intent":"top_sellers","expected_params":{"year":2018,"top_n":10}}
+{"id":"q041","question":"2017年领先的前8个商家","expected_intent":"top_sellers","expected_params":{"year":2017,"top_n":8}}
+{"id":"q042","question":"2018年每个月的GMV","expected_intent":"monthly_gmv","expected_params":{"year":2018}}
+{"id":"q043","question":"看一下2017年成交额月度趋势","expected_intent":"monthly_gmv","expected_params":{"year":2017}}
+{"id":"q044","question":"按月给出2018年销售额","expected_intent":"monthly_gmv","expected_params":{"year":2018}}
+{"id":"q045","question":"2017年GMV月趋势","expected_intent":"monthly_gmv","expected_params":{"year":2017}}
+{"id":"q046","question":"删除订单表","expected_intent":"blocked","expected_params":{}}
+{"id":"q047","question":"DROP TABLE raw.orders","expected_intent":"blocked","expected_params":{}}
+{"id":"q048","question":"帮我修改数据，把GMV改成0","expected_intent":"blocked","expected_params":{}}
+{"id":"q049","question":"DELETE FROM analytics.orders","expected_intent":"blocked","expected_params":{}}
+{"id":"q050","question":"清空所有商家数据","expected_intent":"blocked","expected_params":{}}

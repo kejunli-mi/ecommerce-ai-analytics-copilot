@@ -1,0 +1,492 @@
+{
+  "generated_from": "Olist public dataset; complete January-August periods",
+  "years": {
+    "2017": {
+      "metrics": {
+        "gmv": 3080850.81,
+        "orders": 22562,
+        "aov": 136.55,
+        "users": 21936
+      },
+      "monthly": [
+        {
+          "month": "2017-01",
+          "gmv": 120098.27,
+          "orders": 787
+        },
+        {
+          "month": "2017-02",
+          "gmv": 244959.35,
+          "orders": 1718
+        },
+        {
+          "month": "2017-03",
+          "gmv": 368341.32,
+          "orders": 2617
+        },
+        {
+          "month": "2017-04",
+          "gmv": 353842.98,
+          "orders": 2377
+        },
+        {
+          "month": "2017-05",
+          "gmv": 503159.19,
+          "orders": 3640
+        },
+        {
+          "month": "2017-06",
+          "gmv": 429916.61,
+          "orders": 3205
+        },
+        {
+          "month": "2017-07",
+          "gmv": 492287.3,
+          "orders": 3946
+        },
+        {
+          "month": "2017-08",
+          "gmv": 568245.79,
+          "orders": 4272
+        }
+      ],
+      "categories": [
+        {
+          "category": "bed bath table",
+          "gmv": 259621.24,
+          "units": 2613
+        },
+        {
+          "category": "health beauty",
+          "gmv": 247457.95,
+          "units": 1872
+        },
+        {
+          "category": "sports leisure",
+          "gmv": 224596.75,
+          "units": 2040
+        },
+        {
+          "category": "computers accessories",
+          "gmv": 219638.68,
+          "units": 1694
+        },
+        {
+          "category": "cool stuff",
+          "gmv": 211947.62,
+          "units": 1292
+        },
+        {
+          "category": "watches gifts",
+          "gmv": 206284.44,
+          "units": 858
+        },
+        {
+          "category": "furniture decor",
+          "gmv": 180301.14,
+          "units": 2239
+        },
+        {
+          "category": "garden tools",
+          "gmv": 143767.89,
+          "units": 1070
+        },
+        {
+          "category": "housewares",
+          "gmv": 131132.61,
+          "units": 1677
+        },
+        {
+          "category": "auto",
+          "gmv": 128278.06,
+          "units": 797
+        }
+      ],
+      "states": [
+        {
+          "state": "SP",
+          "gmv": 1111718.45,
+          "orders": 8782,
+          "late_rate": 0.0389,
+          "review": 4.214
+        },
+        {
+          "state": "RJ",
+          "gmv": 442351.03,
+          "orders": 3063,
+          "late_rate": 0.0428,
+          "review": 4.124
+        },
+        {
+          "state": "MG",
+          "gmv": 337167.1,
+          "orders": 2664,
+          "late_rate": 0.0191,
+          "review": 4.209
+        },
+        {
+          "state": "RS",
+          "gmv": 181061.83,
+          "orders": 1410,
+          "late_rate": 0.0354,
+          "review": 4.264
+        },
+        {
+          "state": "PR",
+          "gmv": 161448.68,
+          "orders": 1213,
+          "late_rate": 0.0184,
+          "review": 4.315
+        },
+        {
+          "state": "BA",
+          "gmv": 127864.79,
+          "orders": 799,
+          "late_rate": 0.0752,
+          "review": 3.943
+        },
+        {
+          "state": "SC",
+          "gmv": 121177.14,
+          "orders": 876,
+          "late_rate": 0.078,
+          "review": 4.105
+        },
+        {
+          "state": "GO",
+          "gmv": 69113.85,
+          "orders": 466,
+          "late_rate": 0.0356,
+          "review": 4.116
+        },
+        {
+          "state": "DF",
+          "gmv": 63341.95,
+          "orders": 420,
+          "late_rate": 0.0147,
+          "review": 4.165
+        },
+        {
+          "state": "ES",
+          "gmv": 60263.83,
+          "orders": 485,
+          "late_rate": 0.0462,
+          "review": 4.147
+        },
+        {
+          "state": "PA",
+          "gmv": 55910.3,
+          "orders": 278,
+          "late_rate": 0.0372,
+          "review": 4.068
+        },
+        {
+          "state": "PE",
+          "gmv": 54303.71,
+          "orders": 379,
+          "late_rate": 0.1034,
+          "review": 3.96
+        }
+      ]
+    },
+    "2018": {
+      "metrics": {
+        "gmv": 7341037.41,
+        "orders": 53531,
+        "aov": 137.14,
+        "users": 52337
+      },
+      "monthly": [
+        {
+          "month": "2018-01",
+          "gmv": 945456.29,
+          "orders": 7187
+        },
+        {
+          "month": "2018-02",
+          "gmv": 837895.43,
+          "orders": 6625
+        },
+        {
+          "month": "2018-03",
+          "gmv": 981051.06,
+          "orders": 7168
+        },
+        {
+          "month": "2018-04",
+          "gmv": 993592.98,
+          "orders": 6919
+        },
+        {
+          "month": "2018-05",
+          "gmv": 992871.75,
+          "orders": 6833
+        },
+        {
+          "month": "2018-06",
+          "gmv": 863265.53,
+          "orders": 6145
+        },
+        {
+          "month": "2018-07",
+          "gmv": 878044.27,
+          "orders": 6233
+        },
+        {
+          "month": "2018-08",
+          "gmv": 848860.1,
+          "orders": 6421
+        }
+      ],
+      "categories": [
+        {
+          "category": "health beauty",
+          "gmv": 770002.81,
+          "units": 5924
+        },
+        {
+          "category": "watches gifts",
+          "gmv": 708305.95,
+          "units": 3695
+        },
+        {
+          "category": "bed bath table",
+          "gmv": 537514.13,
+          "units": 5873
+        },
+        {
+          "category": "sports leisure",
+          "gmv": 530182.18,
+          "units": 4503
+        },
+        {
+          "category": "computers accessories",
+          "gmv": 502432.09,
+          "units": 4683
+        },
+        {
+          "category": "housewares",
+          "gmv": 397688.06,
+          "units": 4020
+        },
+        {
+          "category": "furniture decor",
+          "gmv": 385312.01,
+          "units": 4098
+        },
+        {
+          "category": "auto",
+          "gmv": 346632.44,
+          "units": 2610
+        },
+        {
+          "category": "baby",
+          "gmv": 256086.7,
+          "units": 1761
+        },
+        {
+          "category": "cool stuff",
+          "gmv": 230752.41,
+          "units": 1466
+        }
+      ],
+      "states": [
+        {
+          "state": "SP",
+          "gmv": 2960326.25,
+          "orders": 23598,
+          "late_rate": 0.0682,
+          "review": 4.22
+        },
+        {
+          "state": "RJ",
+          "gmv": 901277.72,
+          "orders": 6516,
+          "late_rate": 0.1528,
+          "review": 3.845
+        },
+        {
+          "state": "MG",
+          "gmv": 851003.48,
+          "orders": 6134,
+          "late_rate": 0.0753,
+          "review": 4.138
+        },
+        {
+          "state": "RS",
+          "gmv": 382652.74,
+          "orders": 2764,
+          "late_rate": 0.08,
+          "review": 4.153
+        },
+        {
+          "state": "PR",
+          "gmv": 380766.31,
+          "orders": 2733,
+          "late_rate": 0.0601,
+          "review": 4.207
+        },
+        {
+          "state": "SC",
+          "gmv": 284036.71,
+          "orders": 1896,
+          "late_rate": 0.1062,
+          "review": 4.113
+        },
+        {
+          "state": "BA",
+          "gmv": 272158.01,
+          "orders": 1770,
+          "late_rate": 0.1634,
+          "review": 3.845
+        },
+        {
+          "state": "DF",
+          "gmv": 166262.04,
+          "orders": 1211,
+          "late_rate": 0.083,
+          "review": 4.101
+        },
+        {
+          "state": "ES",
+          "gmv": 153824.97,
+          "orders": 1055,
+          "late_rate": 0.1595,
+          "review": 4.018
+        },
+        {
+          "state": "GO",
+          "gmv": 150350.62,
+          "orders": 1048,
+          "late_rate": 0.0939,
+          "review": 4.029
+        },
+        {
+          "state": "PE",
+          "gmv": 137775.88,
+          "orders": 872,
+          "late_rate": 0.1138,
+          "review": 4.067
+        },
+        {
+          "state": "CE",
+          "gmv": 111996.17,
+          "orders": 662,
+          "late_rate": 0.2101,
+          "review": 3.756
+        }
+      ]
+    }
+  },
+  "segments": [
+    {
+      "customer_segment": "dormant_one_time",
+      "users": 74463,
+      "user_share": 0.783904,
+      "gmv": 10316165.5,
+      "gmv_share": 0.764486,
+      "avg_orders": 1.0,
+      "avg_customer_gmv": 138.54,
+      "avg_recency_days": 288.2,
+      "total_users": 94990,
+      "total_gmv": 13494255.74
+    },
+    {
+      "customer_segment": "recent_one_time",
+      "users": 17640,
+      "user_share": 0.185704,
+      "gmv": 2427883.82,
+      "gmv_share": 0.17992,
+      "avg_orders": 1.0,
+      "avg_customer_gmv": 137.64,
+      "avg_recency_days": 46.4,
+      "total_users": 94990,
+      "total_gmv": 13494255.74
+    },
+    {
+      "customer_segment": "at_risk_repeat",
+      "users": 2268,
+      "user_share": 0.023876,
+      "gmv": 584928.69,
+      "gmv_share": 0.043346,
+      "avg_orders": 2.101,
+      "avg_customer_gmv": 257.91,
+      "avg_recency_days": 272.7,
+      "total_users": 94990,
+      "total_gmv": 13494255.74
+    },
+    {
+      "customer_segment": "active_repeat",
+      "users": 619,
+      "user_share": 0.006516,
+      "gmv": 165277.73,
+      "gmv_share": 0.012248,
+      "avg_orders": 2.162,
+      "avg_customer_gmv": 267.01,
+      "avg_recency_days": 47.7,
+      "total_users": 94990,
+      "total_gmv": 13494255.74
+    }
+  ],
+  "copilot_example": {
+    "status": "ok",
+    "question": "2018年GMV最高的前5个品类",
+    "intent": "top_categories",
+    "params": {
+      "year": 2018,
+      "top_n": 5
+    },
+    "explanation": "按商品明细GMV汇总并排序品类。",
+    "sql": "SELECT\nCOALESCE(product_category, 'unknown_category') AS product_category,\nROUND(SUM(price), 2) AS gmv\nFROM analytics.order_items\nWHERE is_effective_order AND order_purchase_timestamp >= TIMESTAMP '2018-01-01' AND order_purchase_timestamp < TIMESTAMP '2018-09-01'\nGROUP BY 1\nORDER BY gmv DESC, product_category\nLIMIT 5",
+    "columns": [
+      "product_category",
+      "gmv"
+    ],
+    "rows": [
+      [
+        "health_beauty",
+        770002.81
+      ],
+      [
+        "watches_gifts",
+        708305.95
+      ],
+      [
+        "bed_bath_table",
+        537514.13
+      ],
+      [
+        "sports_leisure",
+        530182.18
+      ],
+      [
+        "computers_accessories",
+        502432.09
+      ]
+    ]
+  },
+  "evaluation": {
+    "baseline": {
+      "provider": "baseline",
+      "question_count": 50,
+      "analytic_question_count": 45,
+      "safety_question_count": 5,
+      "intent_accuracy": 0.22,
+      "execution_rate": 0.24444444444444444,
+      "answer_accuracy": 0.24444444444444444,
+      "safety_accuracy": 0.0,
+      "median_latency_ms": 0.008479459211230278
+    },
+    "semantic": {
+      "provider": "semantic",
+      "question_count": 50,
+      "analytic_question_count": 45,
+      "safety_question_count": 5,
+      "intent_accuracy": 0.98,
+      "execution_rate": 0.9777777777777777,
+      "answer_accuracy": 0.9777777777777777,
+      "safety_accuracy": 1.0,
+      "median_latency_ms": 133.25372920371592
+    }
+  }
+}
