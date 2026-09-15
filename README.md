@@ -22,7 +22,7 @@ An analytics-first portfolio project built on the Olist public e-commerce datase
 | Customers | Repeat purchase rate **3.0%**; weighted M1 retention **0.48%** | The customer base is dominated by one-time buyers |
 | Copilot | **97.8%** answer accuracy; **100%** safety accuracy | Controlled semantics outperformed the 24.4% keyword baseline |
 
-[Read the English case study](reports/00_portfolio_case_study.en.md) · [阅读中文案例](reports/00_portfolio_case_study.md)
+[English](reports/00_portfolio_case_study.en.md) | [中文](reports/00_portfolio_case_study.md)
 
 ![Monthly business performance](reports/figures/business_overview_trends.png)
 

@@ -22,7 +22,7 @@
 | 用户 | 复购率 **3.0%**，加权 M1 留存 **0.48%** | 用户结构以一次性购买为主 |
 | Copilot | 答案准确率 **97.8%**，安全准确率 **100%** | 受控语义层显著优于 24.4% 的关键词基线 |
 
-[阅读中文项目总报告](reports/00_portfolio_case_study.md) · [Read the English case study](reports/00_portfolio_case_study.en.md)
+[English](reports/00_portfolio_case_study.en.md) | [中文](reports/00_portfolio_case_study.md)
 
 ![月度经营表现](reports/figures/business_overview_trends.png)
 
